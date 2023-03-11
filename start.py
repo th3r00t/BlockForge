@@ -9,8 +9,10 @@ def main():
             for line in source:
                 _l = line.split("/")
                 subtypeid = _l[1]
-                count = _l[2]
-                breakpoint()
+                try:
+                    count = _l[2]
+                except IndexError:
+                    count = 10
                 render = f"""
         new BlockDef()
         {{
